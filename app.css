@@ -1,0 +1,115 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #F1F1F1;
+    color: #E3E3E3;
+}
+
+#main {
+    margin: 0;
+}
+
+#searchNav {
+    background: #1C181D;
+    position: absolute;
+    width: 100vw;
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#searchNav ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+#user {
+    height: 30px;
+    text-align: center;
+    background: #322F33;
+    padding: 1px;
+    align-items: center;
+    border-radius: 5px;
+}
+
+#user li {
+    padding: 3px;
+}
+
+#dcplaceholder {
+    height: 60%;
+    border-radius: 5px;
+    background: rgb(5, 235, 162);
+    margin: 0.09em 0 0.09em 0.5em;
+    color: #656266;
+}
+
+#searchBar {
+    background: #322F33;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border: 1px solid #656266;
+    width: 40%;
+    border-radius: 5px;
+    margin: 0 15vw 0 15vw;
+}
+
+#searchBar input {
+    background: #322F33;
+    outline: none;
+    border: none;
+}
+
+#searchBar input::placeholder {
+    color: #E3E3E3;
+}
+
+#shopifylogo {
+    left: 5%;
+}
+
+#userTab {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80%;
+}
+
+#userTab svg {
+    background: #322F33;
+    margin: 3px 6px;
+    height: 1.8rem;
+    width: 1.8rem;
+    border-radius: 5px;
+}
+
+.usertab {
+    position: absolute;
+    top: 24%;
+    left: 75%;
+    width: 310px;
+    color: #1C181D;
+    border-radius: 10px;
+    padding: 8px;
+    box-shadow: 1px 0px 15px rgba(0, 0, 0, 0.2);
+}
+
+#alerts p {
+    background: #E3E3E3;
+    padding: 8px;
+    /* height: 2.5em; */
+    font-size: 0.9em;
+    margin: 8px 0 0 0;
+}
+
+#alertMenu {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
