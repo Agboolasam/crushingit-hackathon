@@ -97,7 +97,9 @@ body {
     color: #1C181D;
     border-radius: 10px;
     padding: 8px;
-    box-shadow: 1px 0px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(219, 219, 219, 1);
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.05);
+    ;
 }
 
 #alerts {
@@ -132,8 +134,16 @@ body {
 #user-tab-itemdc {
     display: flex;
     border-radius: 3px;
+    text-align: center;
+    padding: 3px;
+    margin: 3px;
 }
 
 #user-tab-itemdc:first-child {
     background: #E3E3E3;
+    text-align: center;
+}
+
+#user-tab-itemdc:focus {
+    border: 1px solid blue;
 }
