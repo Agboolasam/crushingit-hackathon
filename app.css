@@ -165,6 +165,13 @@ body {
     text-align: center;
 }
 
-#user-tab-itemdc:focus {
-    border: 1px solid blue;
+#profile li {
+    transition: 100ms ease-in-out;
+}
+
+#profile li:hover {
+    background: #E3E3E3;
+    border-radius: 3px;
+    margin: 2px;
+    padding: 2px;
 }
