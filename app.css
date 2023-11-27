@@ -60,10 +60,20 @@ body {
     margin: 0 15px 0 15px;
 }
 
+#searchBar:hover {
+    border: 1px solid #E3E3E3;
+}
+
+#searchBar:has(input:focus) {
+    outline: 2px solid #E3E3E3;
+}
+
 #searchBar input {
     background: #322F33;
+    width: 90%;
     outline: none;
     border: none;
+    color: #E3E3E3;
 }
 
 #searchBar input::placeholder {
@@ -82,12 +92,22 @@ body {
     height: 80%;
 }
 
-#userTab svg {
+#bell {
     background: #322F33;
     margin: 3px 6px;
     height: 1.8rem;
     width: 1.8rem;
     border-radius: 5px;
+}
+
+#user:focus,
+#bell:focus {
+    outline: 2px solid #005BD3;
+}
+
+#user:hover,
+#bell:hover {
+    background: #616161;
 }
 
 .usertabmenu {
@@ -123,6 +143,7 @@ body {
 #profile {
     width: 15rem;
     padding: 0;
+    display: none;
 }
 
 #profile ul {
