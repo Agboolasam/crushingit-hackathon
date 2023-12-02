@@ -1,216 +1,244 @@
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            background: #F1F1F1;
-            color: #E3E3E3;
-            position: relative;
-        }
-        
-        #searchNav {
-            background: #1C181D;
-            position: absolute;
-            padding: 12px 16px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100vw;
-        }
-        
-        #searchNav ul {
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: space-around;
-            list-style: none;
-        }
-        
-        #user {
-            height: 30px;
-            text-align: center;
-            background: #322F33;
-            padding: 1px;
-            align-items: center;
-            border-radius: 5px;
-        }
-        
-        #user li {
-            padding: 3px;
-        }
-        
-        .dcplaceholder {
-            height: fit-content;
-            border-radius: 5px;
-            background: rgb(5, 235, 162);
-            margin: 0.09em 0 0.09em 0.5em;
-            color: #656266;
-            padding: 4px;
-            text-align: center;
-            margin-right: 3px;
-            margin-left: 0px;
-        }
-        
-        #searchBar {
-            background: #322F33;
-            justify-content: center;
-            align-items: center;
-            padding: 5px;
-            border: 1px solid #656266;
-            width: 40%;
-            border-radius: 5px;
-            margin: 0 15px 0 15px;
-        }
-        
-        #searchBar:hover {
-            border: 1px solid #E3E3E3;
-        }
-        
-        #searchBar:has(input:focus) {
-            outline: 2px solid #E3E3E3;
-        }
-        
-        #searchBar input {
-            background: #322F33;
-            width: 90%;
-            outline: none;
-            border: none;
-            color: #E3E3E3;
-        }
-        
-        #searchBar input::placeholder {
-            color: #E3E3E3;
-        }
-        
-        .shopifylogo {
-            margin: 0;
-            left: 5px;
-        }
-        
-        #logo1 {
-            display: block;
-        }
-        
-        #logo2 {
-            display: none;
-        }
-        
-        #userTab {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 80%;
-        }
-        
-        #bell {
-            background: #322F33;
-            margin: 3px 6px;
-            height: 1.8rem;
-            width: 1.8rem;
-            border-radius: 5px;
-        }
-        
-        #user:focus,
-        #bell:focus,
-        #profile ul :focus {
-            outline: 2px solid #005BD3;
-            border-radius: 3px;
-        }
-        
-        #user:hover,
-        #bell:hover {
-            background: #616161;
-        }
-        
-        .usertabmenu {
-            position: absolute;
-            top: 65px;
-            right: 2vw;
-            color: #1C181D;
-            border-radius: 10px;
-            padding: 8px;
-            border: 1px solid rgba(219, 219, 219, 1);
-            box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.05);
-        }
-        
-        #alerts {
-            display: none;
-        }
-        
-        #alerts p {
-            background: #E3E3E3;
-            padding: 8px;
-            /* height: 2.5em; */
-            font-size: 0.9em;
-            margin: 8px 0 0 0;
-        }
-        
-        #alertMenu {
-            list-style: none;
-            display: flex;
-            justify-content: space-between;
-        }
-        
-        #profile {
-            width: 15rem;
-            padding: 0;
-            display: none;
-        }
-        
-        #profile ul li {
-            list-style: none;
-            padding: 3px;
-            margin: 1px;
-        }
-        
-        #user-tab-itemdc {
-            display: flex;
-            border-radius: 3px;
-            text-align: center;
-            padding: 3px;
-            margin: 3px;
-        }
-        
-        #username:first-child {
-            background: #E3E3E3;
-        }
-        
-        #profile li {
-            transition: 100ms ease-in-out;
-        }
-        
-        #profile li:hover {
-            background: #E3E3E3;
-            border-radius: 3px;
-            margin: 2px;
-            padding: 2px;
-        }
-        
-        #username {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        @media screen and (max-width:640px) {
-            #logo1 {
-                display: none;
-            }
-            #logo2 {
-                display: block;
-            }
-            #brandName {
-                display: none;
-            }
-            #bell {
-                background: none;
-            }
-            #user {
-                background: none;
-            }
-            #searchBar {
-                width: 80%;
-            }
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*:focus {
+    outline: 2px solid #005BD3;
+    border-radius: 3px;
+}
+
+body {
+    background: #F1F1F1;
+    color: #E3E3E3;
+}
+
+#searchNav {
+    background: #1C181D;
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+}
+
+#searchNav ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+#user {
+    height: 30px;
+    text-align: center;
+    background: #322F33;
+    padding: 1px;
+    align-items: center;
+    border-radius: 5px;
+}
+
+#user li {
+    padding: 3px;
+}
+
+.dcplaceholder {
+    height: fit-content;
+    border-radius: 5px;
+    background: rgb(5, 235, 162);
+    margin: 0.09em 0 0.09em 0.5em;
+    color: #656266;
+    padding: 4px;
+    text-align: center;
+    margin-right: 3px;
+    margin-left: 0px;
+}
+
+#searchBar {
+    background: #322F33;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border: 1px solid #656266;
+    width: 40%;
+    border-radius: 5px;
+    margin: 0 15px 0 15px;
+}
+
+#searchBar:hover {
+    border: 1px solid #E3E3E3;
+}
+
+#searchBar:has(input:focus) {
+    outline: 2px solid #E3E3E3;
+}
+
+#searchBar input {
+    background: #322F33;
+    width: 90%;
+    outline: none;
+    border: none;
+    color: #E3E3E3;
+}
+
+#searchBar input::placeholder {
+    color: #E3E3E3;
+}
+
+.shopifylogo {
+    margin: 0;
+    left: 5px;
+}
+
+#logo1 {
+    display: block;
+}
+
+#logo2 {
+    display: none;
+}
+
+#userTab {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80%;
+}
+
+#bell {
+    background: #322F33;
+    margin: 3px 6px;
+    height: 1.8rem;
+    width: 1.8rem;
+    border-radius: 5px;
+}
+
+#user:hover,
+#bell:hover {
+    background: #616161;
+}
+
+.usertabmenu {
+    position: absolute;
+    top: 65px;
+    right: 2vw;
+    color: #1C181D;
+    border-radius: 10px;
+    padding: 8px;
+    border: 1px solid rgba(219, 219, 219, 1);
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.05);
+}
+
+#alerts {
+    background: #F1F1F1;
+    display: none;
+}
+
+#alerts p {
+    background: #E3E3E3;
+    padding: 8px;
+    /* height: 2.5em; */
+    font-size: 0.9em;
+    margin: 8px 0 0 0;
+}
+
+#alertMenu {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+#profile {
+    width: 15rem;
+    padding: 0;
+    display: none;
+    background: #F1F1F1;
+}
+
+#profile ul li {
+    list-style: none;
+    padding: 3px;
+    margin: 1px;
+}
+
+#user-tab-itemdc {
+    display: flex;
+    border-radius: 3px;
+    text-align: center;
+    padding: 3px;
+    margin: 3px;
+}
+
+#username:first-child {
+    background: #E3E3E3;
+}
+
+#profile li:hover {
+    background: #E3E3E3;
+    border-radius: 3px;
+    margin: 2px;
+    padding: 2px;
+}
+
+#username {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main {
+    margin: auto;
+    width: 60%;
+    margin-top: 3vh;
+}
+
+#planAd1 {
+    background: #1C181D;
+    display: flex;
+    padding: 0.4em;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    text-align: center;
+    border-radius: 5px;
+}
+
+planAd input {
+    padding: 0.2em;
+    margin-bottom: 3px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width:640px) {
+    #logo1 {
+        display: none;
+    }
+    #logo2 {
+        display: block;
+    }
+    #brandName {
+        display: none;
+    }
+    #bell {
+        background: none;
+    }
+    #user {
+        background: none;
+    }
+    #searchBar {
+        width: 80%;
+    }
+    #searchBar input {
+        width: 80%
+    }
+    main {
+        width: 100%;
+    }
+    #planAd1 {
+        border-radius: 0;
+    }
+}
