@@ -4,6 +4,14 @@
     box-sizing: border-box;
 }
 
+:root {
+    --height: 0.5em;
+    --width: 30%;
+    --progress-color: rgba(0, 0, 0);
+    --progress-bar-color: rgba(0, 0, 0, 0.1);
+    --br: 1em;
+}
+
 *:focus {
     outline: 2px solid #005BD3;
     border-radius: 3px;
@@ -194,7 +202,8 @@ main {
     margin-top: 3vh;
 }
 
-#planAd1 {
+#planAd1,
+#planAd2 {
     background: #1C181D;
     display: flex;
     padding: 0.4em;
@@ -205,12 +214,147 @@ main {
     border-radius: 5px;
 }
 
-planAd input {
+#planAd2 {
+    display: none;
+}
+
+.planAd input {
     padding: 0.2em;
     margin-bottom: 3px;
     border-radius: 5px;
     border: none;
     cursor: pointer;
+}
+
+#li-text {
+    display: flex;
+    text-align: left;
+    padding: 3px;
+    margin: 1px;
+}
+
+#li-input {
+    display: flex;
+    padding: 5px;
+}
+
+#setupGuide {
+    color: #1C181D;
+    margin-top: 2em;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid rgba(219, 219, 219, 1);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.05);
+}
+
+#top {
+    display: flex;
+    justify-content: space-between;
+}
+
+#setupProg {
+    width: 30%;
+    color: #1C181D;
+}
+
+#setupProg::-webkit-progress-value {
+    background-color: #1C181D;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#progress-bar {
+    width: var(--width);
+    height: var(--height);
+    border-radius: var(--br);
+    background-color: var(--progress-bar-color);
+    border: 1px solid rgba(219, 219, 219, 1);
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+}
+
+#progress {
+    width: 50%;
+    background-color: var(--progress-color);
+    height: inherit;
+    border-radius: inherit;
+}
+
+.icons,
+.setup {
+    display: flex;
+    flex-direction: column;
+}
+
+.icons {
+    padding: 0 1em;
+    min-width: fit-content;
+}
+
+.setup {
+    flex-direction: row;
+    margin: 0.2em;
+    padding: 0.2em;
+}
+
+.setup:focus,
+.setup:has(a:focus) {
+    outline: none;
+    background: #e3e3e3;
+    border-radius: var(--br);
+}
+
+#setup-options {
+    display: flex;
+    flex-direction: column;
+}
+
+#setup-options a {
+    text-decoration: none;
+    color: #005BD3;
+    margin: 2px;
+}
+
+#setup-options a.redirect {
+    /* height: 1em; */
+    width: fit-content;
+    background: #616161;
+    padding: 2px;
+    border-radius: 2px;
+    outline: #1C181D;
+    outline-style: inset;
+    text-decoration: none;
+    color: #F1F1F1;
+}
+
+.setup-details {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: nowrap;
+}
+
+.setup-details a,
+.setup-details span,
+.setup-details img {
+    display: none;
+}
+
+.inner {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+.second-icon,
+.third-icon,
+.fourth-icon {
+    display: none;
 }
 
 @media screen and (max-width:640px) {
@@ -239,6 +383,19 @@ planAd input {
         width: 100%;
     }
     #planAd1 {
+        display: none;
+    }
+    #planAd2 {
+        display: block;
         border-radius: 0;
+    }
+    #setupGuide {
+        border-radius: 0;
+    }
+    .setup-details img {
+        display: none;
+    }
+    .inner {
+        width: 100%;
     }
 }
