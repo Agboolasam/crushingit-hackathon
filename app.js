@@ -8,7 +8,6 @@ let planAd2 = document.getElementById("planAd2");
 let removeAd = document.getElementsByClassName("remove-ad");
 let arrows = document.getElementsByClassName("arrows");
 let progLabel = document.getElementById("label-for-progress");
-let progress = document.getElementById("setupProg");
 
 //display the menu and alert interchangeably
 alerts.addEventListener("click", () => {
@@ -58,21 +57,54 @@ arrows[1].addEventListener("click", () => {
 //TODO:add keyboard accessibility to the profilemenu
 
 (function icons() {
+  let progress = 0;
+
   let firstIcon = document.getElementsByClassName("first-icon");
-  const secondIcon = document.getElementsByClassName("second-icon");
-  const thirdIcon = document.getElementsByClassName("third-icon");
-  const fourthIcon = document.getElementsByClassName("fourth-icon");
+  // const secondIcon = document.getElementsByClassName("second-icon");
+  // const thirdIcon = document.getElementsByClassName("third-icon");
+  let fourthIcon = document.getElementsByClassName("fourth-icon");
+
   console.log(firstIcon);
+
+  // for icon animation
   for (item of firstIcon) {
     item.addEventListener("click", (e) => {
       setTimeout(() => {
         e.target.nextElementSibling.style.display = "block";
-      }, 50);
-      e.target.style.display = "none";
+        e.target.style.display = "none";
+      }, 100);
+
       setTimeout(() => {
         e.target.nextElementSibling.nextElementSibling.style.display = "block";
         e.target.nextElementSibling.style.display = "none";
-      }, 100);
+      }, 300);
+
+      setTimeout(() => {
+        e.target.nextElementSibling.nextElementSibling.nextElementSibling.style.display =
+          "block";
+        e.target.nextElementSibling.nextElementSibling.style.display = "none";
+      }, 600);
+
+      progress += 1;
+      console.log(progress);
     });
   }
+  console.log(fourthIcon);
+  // // for back transition
+  // for (item of fourthIcon) {
+  //   item.addEventListener("click", (e) => {
+  //     item.style.display = "none";
+  //     // item.firstOfType.style.display = "block";
+  //   });
+  // }
+  for (let icon of fourthIcon) {
+    icon.addEventListener("click", () => {
+      icon.style.display = "none";
+      icon.previousElementSibling.previousElementSibling.previousElementSibling.style.display =
+        "block";
+      progress -= 1;
+      console.log(progress);
+    });
+  }
+  progLabel.innerHTML = `${progress}/5 completed`;
 })();
