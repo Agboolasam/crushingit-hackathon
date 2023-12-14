@@ -8,6 +8,7 @@ let planAd2 = document.getElementById("planAd2");
 let removeAd = document.getElementsByClassName("remove-ad");
 let arrows = document.getElementsByClassName("arrows");
 let progLabel = document.getElementById("label-for-progress");
+let progBar = document.getElementById("progress");
 
 //display the menu and alert interchangeably
 alerts.addEventListener("click", () => {
@@ -39,10 +40,6 @@ for (const item of removeAd) {
   });
 }
 
-// TODO: relating the progress bar to the label
-// let val = progress.value;
-// progLabel.innerText = ` ${val}/5 completed`;
-
 // add  event to arrows
 console.log(arrows);
 arrows[1].style.display = "none";
@@ -56,9 +53,9 @@ arrows[1].addEventListener("click", () => {
 });
 //TODO:add keyboard accessibility to the profilemenu
 
+let progress = 0;
+progLabel.innerText = `${progress}/5 completed`;
 (function icons() {
-  let progress = 0;
-
   let firstIcon = document.getElementsByClassName("first-icon");
   // const secondIcon = document.getElementsByClassName("second-icon");
   // const thirdIcon = document.getElementsByClassName("third-icon");
@@ -85,26 +82,23 @@ arrows[1].addEventListener("click", () => {
         e.target.nextElementSibling.nextElementSibling.style.display = "none";
       }, 600);
 
-      progress += 1;
+      progress = progress + 1;
+      progLabel.innerText = `${progress}/5 completed`;
+      progBar.style.width = `${progress * 20}%`;
       console.log(progress);
     });
   }
   console.log(fourthIcon);
-  // // for back transition
-  // for (item of fourthIcon) {
-  //   item.addEventListener("click", (e) => {
-  //     item.style.display = "none";
-  //     // item.firstOfType.style.display = "block";
-  //   });
-  // }
+  // for back transition
   for (let icon of fourthIcon) {
     icon.addEventListener("click", () => {
       icon.style.display = "none";
       icon.previousElementSibling.previousElementSibling.previousElementSibling.style.display =
         "block";
-      progress -= 1;
+      progress = progress - 1;
+      progLabel.innerText = `${progress}/5 completed`;
+      progBar.style.width = `${progress * 20}%`;
       console.log(progress);
     });
   }
-  progLabel.innerHTML = `${progress}/5 completed`;
 })();

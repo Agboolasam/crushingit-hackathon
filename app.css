@@ -279,7 +279,6 @@ main {
 }
 
 #progress {
-    width: 50%;
     background-color: var(--progress-color);
     height: inherit;
     border-radius: inherit;
